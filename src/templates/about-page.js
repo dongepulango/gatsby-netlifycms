@@ -1,56 +1,49 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import React from 'react';
+//gatsby
+import { graphql } from 'gatsby';
+//styles
+import styled from 'styled-components';
+//page transition
+import PageTransition from 'gatsby-plugin-page-transitions';
+//components
+import Layout from '../components/layout';
+import Container from '../components/container';
+import Heading from '../components/heading';
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+//styled
+const AboutPageWrap = styled.section`
+  position: relative;
+`;
+
+export const AboutPageTemplate = ({ title, content}) => {
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <AboutPageWrap>
+      <Container>
+        <Heading>{title}</Heading>
+        <div dangerouslySetInnerHTML={{ __html: content }}></div>
+      </Container>
+    </AboutPageWrap>
   )
-}
-
-AboutPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
-}
+};
 
 const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
+
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
-      <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
-      />
+      <PageTransition>
+        <AboutPageTemplate
+          title={post.frontmatter.title}
+          content={post.html}
+        />
+      </PageTransition>
     </Layout>
   )
-}
+};
 
-AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
-}
-
-export default AboutPage
-
+//page query
 export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
@@ -60,4 +53,6 @@ export const aboutPageQuery = graphql`
       }
     }
   }
-`
+`;
+
+export default AboutPage;
