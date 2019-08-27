@@ -6,6 +6,7 @@ import { graphql, Link } from 'gatsby';
 //components
 import Layout from '../components/layout';
 import Container from '../components/container';
+
 import Content, { HTMLContent } from '../components/Content';
 
 export const BlogPostTemplate = ({
