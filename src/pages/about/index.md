@@ -1,5 +1,5 @@
 ---
-templateKey: about-page
+templateKey: aboutPage
 title: About Our Values
 ---
 ### Shade-grown coffee
