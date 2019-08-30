@@ -1,6 +1,6 @@
 import React from 'react';
 //gatsby
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
 import vars from '../components/varss';
@@ -12,25 +12,74 @@ import Layout from '../components/layout';
 import Container from '../components/container';
 import Heading from '../components/heading';
 import Image from '../components/image';
+import Button from '../components/button';
+//grid
+import { Row, Col } from 'styled-bootstrap-grid';
 
 //styled
 const HomePageWrap = styled.section`
   position: relative;
-  padding-top: ${vars.rems.f50};
-  padding-bottom: ${vars.rems.f50};
+`;
+
+const HomeHero = styled.div`
+  position: relative;
+  padding-top: ${vars.rems.f150};
+  padding-bottom: ${vars.rems.f150};
+  border-bottom: 1px solid #f6edfa;
+  border-top: 1px solid #f6edfa;
+  background: #fcfaff;
+  text-align: center;
+  .image-wrap {
+    margin-bottom: 40px;
+  }
+  ${Heading} {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
+const HomeContent = styled.div`
+  position: relative;
+  padding-top: ${vars.rems.f100};
+  padding-bottom: ${vars.rems.f100};
+  button {
+    margin-top: 20px;
+  }
 `;
 
 //template
-export const HomePageTemplate = ({title, image, heading, subheading, description,}) => {
+export const HomePageTemplate = ({ heading, subheading, logo, image, description }) => {
   return (
     <HomePageWrap>
-      <Container>
-        <p>{title}</p>
-        <Heading>{heading}</Heading>
-        <Heading as={'h2'} heading2>{subheading}</Heading>
-        <p>{description}</p>
-        <Image fluid={image} center />
-      </Container>
+      <HomeHero>
+        <Container>
+          <div className="image-wrap">
+            <Image fluid={logo} center/>
+          </div>
+          <Heading heading1>{heading}</Heading>
+          <p>{subheading}</p>
+        </Container>
+      </HomeHero>
+      <HomeContent>
+        <Container>
+          <Row>
+            <Col md={6}>
+              <Image fluid={image} center />
+            </Col>
+            <Col md={6}>
+              <p>{description}</p>
+              <Link to="/blog">
+                <Button primary>Visit Blog</Button>
+              </Link>
+            </Col>
+          </Row>
+        </Container>
+      </HomeContent>
     </HomePageWrap>
   );
 };
@@ -38,17 +87,17 @@ export const HomePageTemplate = ({title, image, heading, subheading, description
 //page
 const HomePage = ({ data }) => {
 
-  const { frontmatter : page } = data.markdownRemark;
+  const { frontmatter: page } = data.markdownRemark;
 
   return (
     <Layout>
       <SEO title="Home" />
       <PageTransition>
         <HomePageTemplate
-          image={page.image.childImageSharp.fluid}
           title={page.title}
           heading={page.heading}
-          subheading={page.subheading}
+          logo={page.logo.childImageSharp.fluid}
+          image={page.image.childImageSharp.fluid}
           description={page.description}
         />
       </PageTransition>
@@ -62,16 +111,25 @@ export const homePageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "indexPage" } }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         heading
         subheading
         description
+        logo {
+          childImageSharp {
+            fluid(maxWidth: 75) {
+              ...GatsbyImageSharpFluid
+              presentationWidth
+            }
+          }
+        }
+        image{
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+              presentationWidth
+            }
+          }
+        }
       }
     }
   }

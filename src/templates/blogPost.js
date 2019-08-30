@@ -11,22 +11,51 @@ import SEO from '../components/seo';
 import Layout from '../components/layout';
 import Container from '../components/container';
 import Heading from '../components/heading';
+import Image from '../components/image';
 
 //styled
 const BlogPostWrap = styled.section`
   position: relative;
   padding-top: ${vars.rems.f50};
   padding-bottom: ${vars.rems.f50};
+  .featured-image {
+    margin-bottom: 30px;
+  }
+`;
+
+const PostHTML = styled.div`
+  position: relative;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+  p {
+    font-size: ${vars.rems.f18};
+    line-height: 2.3;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    + h1,
+    + h2,
+    + h3,
+    + h4,
+    + h5,
+    + h6 {
+      margin-top: 60px;
+    }
+  }
 `;
 
 //template
-export const BlogPostTemplate = ({title, description, content}) => {
+export const BlogPostTemplate = ({ title, content, featuredPost, featuredImage }) => {
   return (
-    <BlogPostWrap>
-      <Container>
+    <BlogPostWrap featuredPost={featuredPost}>
+      <Container maxWidth={'800px'}>
         <Heading>{title}</Heading>
-        <p>{description}</p>
-        <div dangerouslySetInnerHTML={{ __html: content }}></div>
+        <Image fluid={featuredImage} className="featured-image" />
+        <PostHTML dangerouslySetInnerHTML={{ __html: content }} />
       </Container>
     </BlogPostWrap>
   );
@@ -42,9 +71,10 @@ const BlogPost = ({ data }) => {
       <SEO title={post.frontmatter.title} />
       <PageTransition>
         <BlogPostTemplate
-          content={post.html}
-          description={post.frontmatter.description}
           title={post.frontmatter.title}
+          featuredPost={post.frontmatter.featuredpost}
+          featuredImage={post.frontmatter.featuredimage.childImageSharp.fluid}
+          content={post.html}
         />
       </PageTransition>
     </Layout>
@@ -60,7 +90,14 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        description
+        featuredpost
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

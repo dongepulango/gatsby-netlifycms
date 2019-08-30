@@ -87,7 +87,7 @@ const BlogPage = () => {
       <SEO title="Blog" />
       <PageTransition>
         <BlogPageWrap>
-          <Container>
+          <Container maxWidth={'800px'}>
             <Heading>Blog</Heading> 
             <BlogList>
               {data.allMarkdownRemark.edges.map((item) => (
