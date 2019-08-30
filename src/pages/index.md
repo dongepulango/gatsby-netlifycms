@@ -4,8 +4,7 @@ title: Gatsby + Netlify CMS Starter
 logo: /img/gatsby-icon.png
 image: /img/gatsby-astronaut.png
 heading: Gatsby + Netlify CMS Starter
-subheading: >-
-  This repo contains an example website that is built with Gatsby, and Netlify
+subheading: This repo contains an example website that is built with Gatsby, and Netlify
   CMS.It follows the JAMstack architecture by using Git as a single source of
   truth, and Netlify for continuous deployment, and CDN distribution.
 description: >-
