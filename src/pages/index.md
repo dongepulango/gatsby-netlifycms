@@ -1,6 +1,7 @@
 ---
 templateKey: indexPage
 title: Great coffee with a conscience
+icon: /img/gatsby-icon.png
 image: /img/gatsby-astronaut.png
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
