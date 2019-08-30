@@ -96,6 +96,7 @@ const HomePage = ({ data }) => {
         <HomePageTemplate
           title={page.title}
           heading={page.heading}
+          subheading={page.subheading}
           logo={page.logo.childImageSharp.fluid}
           image={page.image.childImageSharp.fluid}
           description={page.description}
