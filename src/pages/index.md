@@ -1,13 +1,20 @@
 ---
 templateKey: indexPage
-title: Great coffee with a conscience
+title: Gatsby + Netlify CMS Starter
 logo: /img/gatsby-icon.png
 image: /img/gatsby-astronaut.png
-heading: Great coffee with a conscience
-subheading: Great coffee with a conscience
+heading: Gatsby + Netlify CMS Starter
+subheading: >-
+  This repo contains an example website that is built with Gatsby, and Netlify
+  CMS.It follows the JAMstack architecture by using Git as a single source of
+  truth, and Netlify for continuous deployment, and CDN distribution.
 description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+  Pop-up wolf seitan meh tacos literally banjo cloud bread stumptown art party
+  pork belly deep v hammock mustache heirloom. Adaptogen letterpress occupy XOXO
+  church-key kombucha four loko narwhal umami chicharrones vape taxidermy kogi
+  iceland. Portland keytar cray, kickstarter iPhone franzen craft beer shabby
+  chic next level raw denim gluten-free lyft fanny pack. Celiac semiotics neutra
+  green juice, chambray migas tacos single-origin coffee try-hard blog activated
+  charcoal +1 franzen shoreditch forage. Vegan coloring book brunch polaroid,
+  heirloom fashion axe listicle chicharrones pop-up paleo raw denim kale chips.
 ---
