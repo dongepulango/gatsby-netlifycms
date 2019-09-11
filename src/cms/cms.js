@@ -9,4 +9,4 @@ import ContactPagePreview from './preview-templates/contactPagePreview';
 CMS.registerPreviewTemplate('home', HomePagePreview);
 CMS.registerPreviewTemplate('blog', BlogPostPreview);
 CMS.registerPreviewTemplate('about', AboutPagePreview);
-CMS.registerPreviewTemplate('about', ContactPagePreview);
+CMS.registerPreviewTemplate('contact', ContactPagePreview);
