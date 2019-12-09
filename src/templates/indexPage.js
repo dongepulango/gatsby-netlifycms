@@ -72,6 +72,7 @@ export const HomePageTemplate = ({ heading, subheading, logo, image, description
               <Image fluid={image} center />
             </Col>
             <Col md={6}>
+              <Heading heading2>Welcome</Heading>
               <p>{description}</p>
               <Link to="/blog">
                 <Button primary>Visit Blog</Button>
