@@ -4,32 +4,32 @@
   "version": "1.1.3",
   "author": "BalkanBrothers",
   "dependencies": {
-    "gatsby": "^2.18.7",
-    "gatsby-image": "^2.2.34",
-    "gatsby-plugin-netlify": "^2.1.27",
-    "gatsby-plugin-netlify-cms": "^4.1.31",
+    "gatsby": "^2.21.15",
+    "gatsby-image": "^2.4.2",
+    "gatsby-plugin-netlify": "^2.3.2",
+    "gatsby-plugin-netlify-cms": "^4.3.1",
     "gatsby-plugin-page-transitions": "git://github.com/jeff-wolff/gatsby-v2-plugin-page-transitions.git",
-    "gatsby-plugin-react-helmet": "^3.1.16",
-    "gatsby-plugin-sharp": "^2.3.5",
-    "gatsby-plugin-styled-components": "^3.1.14",
-    "gatsby-remark-copy-linked-files": "^2.1.31",
-    "gatsby-remark-images": "^3.1.35",
-    "gatsby-remark-relative-images": "^0.2.1",
-    "gatsby-source-filesystem": "^2.1.40",
-    "gatsby-transformer-remark": "^2.6.39",
-    "gatsby-transformer-sharp": "^2.3.7",
+    "gatsby-plugin-react-helmet": "^3.3.1",
+    "gatsby-plugin-sharp": "^2.6.1",
+    "gatsby-plugin-styled-components": "^3.3.1",
+    "gatsby-remark-copy-linked-files": "^2.3.2",
+    "gatsby-remark-images": "^3.3.1",
+    "gatsby-remark-relative-images": "^0.3.0",
+    "gatsby-source-filesystem": "^2.3.1",
+    "gatsby-transformer-remark": "^2.8.7",
+    "gatsby-transformer-sharp": "^2.5.1",
     "lodash": "^4.17.15",
     "lodash-webpack-plugin": "^0.11.4",
-    "netlify-cms-app": "^2.9.6",
+    "netlify-cms-app": "^2.12.12",
     "parcel-bundler": "^1.12.4",
-    "polished": "^3.4.2",
+    "polished": "^3.6.2",
     "prop-types": "^15.6.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "styled-bootstrap-grid": "^3.0.5",
-    "styled-components": "^4.4.1",
-    "uuid": "^3.2.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.0.0",
+    "styled-bootstrap-grid": "^3.1.0",
+    "styled-components": "^5.1.0",
+    "uuid": "^8.0.0"
   },
   "keywords": [
     "gatsby"
@@ -50,9 +50,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "http-proxy-middleware": "^0.19.1",
+    "http-proxy-middleware": "^1.0.3",
     "netlify-lambda": "^1.4.3",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.5"
   }
 }

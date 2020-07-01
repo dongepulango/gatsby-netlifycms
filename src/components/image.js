@@ -11,7 +11,7 @@ const Image = (props) => {
       ...props,
       style: {
         ...(props.style || {}),
-        maxWidth: props.fluid.presentationWidth,
+        maxWidth: props.twoX ? props.fluid.presentationWidth / 2 : props.fluid.presentationWidth,
         margin: normalizedProps.center ? '0 auto' : '0',
       },
     }
